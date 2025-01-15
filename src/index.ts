@@ -4,6 +4,7 @@ import cors from "cors";
 import morgan from "morgan";
 import helmet from "helmet";
 import  dotenv from "dotenv";
+import dashboardRoutes from "./routes/dashboardRoutes";
 
 // Route Imports
 
@@ -20,9 +21,7 @@ app.use(cors());
 //*******************************//
 
 // Routes
-app.get("/hello", (req, res) => {
-    res.send("Hello World!");
-})
+app.use("/dashboard", dashboardRoutes);
 
 //Servers
 
